@@ -1,11 +1,11 @@
 var faker = require('faker');
 var mongoose = require('mongoose');
-var port = process.env.port || 3001;
+var ObjectID = require('mongodb').ObjectID;
 
 mongoose.connect('mongodb://localhost/restaurants');
 
 var restSchema = mongoose.Schema({
-  id: { type: Number, required: true, unique: true },
+  id: { type: String, required: true, unique: true },
   name: String,
   category: String,
   desc: String,
@@ -21,41 +21,6 @@ var restSchema = mongoose.Schema({
 })
 
 var Restaurant = mongoose.model('Restaurant', restSchema);
-
-var save = (data) => {
-  get((err, current) => {
-    if (err) {
-      console.log(err);
-      throw err;
-    } else {
-      data.map((restaurant) => {
-        var newRestaurant = new Restaurant({
-          id: restaurant.id,
-          name: restaurant.name,
-          category: restaurant.name,
-          desc: restaurant.desc,
-          location: restaurant.loc,
-          expense: restaurant.expense,
-          food_rating: restaurant.food_rating,
-          decor_rating: restaurant.decor_rating,
-          service_rating: restaurant.service_rating,
-          desc_bold: restaurant.desc_bold,
-          knownfor_img: restaurant.knownfor_img,
-          knownfor_desc: restaurant.knownfor_desc,
-          mentions: restaurant.mentions
-        })
-        return newRestaurant;
-      })
-      data.forEach((restaurant) => { restaurant.save() })
-    }
-  })
-}
-
-var get = (callback) => {
-  return Restaurant.find(callback)
-}
-
-
 
 var randomGen = function(flag) {
   var randNum = Math.floor(Math.random() * 5) + 1
@@ -76,7 +41,8 @@ var randomGen = function(flag) {
 
 var databaseData = new Array(100).fill(null)
                        .map(e =>
-                   e = {name: faker.fake("{{company.companyName}}"),
+                   e = {id: new ObjectID(),
+                        name: faker.fake("{{company.companyName}}"),
                         category: faker.fake("{{commerce.productName}}"),
                         desc: faker.fake("{{company.bs}}"),
                         location: faker.fake("{{address.city}}, {{address.stateAbbr}}"),
@@ -90,8 +56,9 @@ var databaseData = new Array(100).fill(null)
                         mentions: randomGen('image')
                         })
 
-// console.log(databaseData)
-                
-
-module.exports.save = save;
-module.exports.get - get;
+try {
+  Restaurant.insertMany(databaseData)
+} catch(e) {restaurants
+  console.log(e)
+}
+// mongoose.connection.close();
