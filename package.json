@@ -11,6 +11,8 @@
   "dependencies": {},
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "faker": "^4.1.0"
+    "express": "^4.16.3",
+    "faker": "^4.1.0",
+    "mongoose": "^5.2.13"
   }
 }
