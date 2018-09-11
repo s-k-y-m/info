@@ -18,47 +18,48 @@ var restSchema = mongoose.Schema({
   knownfor_img: Array,
   knownfor_desc: String,
   mentions: Array
-})
+});
 
 var Restaurant = mongoose.model('Restaurant', restSchema);
 
 var randomGen = function(flag) {
-  var randNum = Math.floor(Math.random() * 5) + 1
+  var randNum = Math.floor(Math.random() * 5) + 1;
   var arr = [];
 
   if (flag === 'rating') {
-    randNum += ((Math.random() * .99) + .01)
-    randNum = randNum.toFixed(2)
+    randNum += ((Math.random() * .99) + .01);
+    randNum = randNum.toFixed(2);
   }
   if (flag === 'image') {
     for (var i = 0; i < randNum; i++) {
-      arr.push(faker.fake("{{random.image}}"))
+      arr.push(faker.fake('{{random.image}}'));
     }
     randNum = arr;
   }
   return randNum;
-}
+};
 
 var databaseData = new Array(100).fill(null)
-                       .map(e =>
-                   e = {id: new ObjectID(),
-                        name: faker.fake("{{company.companyName}}"),
-                        category: faker.fake("{{commerce.productName}}"),
-                        desc: faker.fake("{{company.bs}}"),
-                        location: faker.fake("{{address.city}}, {{address.stateAbbr}}"),
-                        expense: randomGen(),
-                        food_rating: randomGen('rating'),
-                        decor_rating: randomGen('rating'),
-                        service_rating: randomGen('rating'),
-                        desc_bold: faker.fake("{{lorem.sentences}}"),
-                        knownfor_img: randomGen('image'),
-                        knownfor_desc: faker.fake("{{random.words}}"),
-                        mentions: randomGen('image')
-                        })
+  .map(e =>
+    e = {id: new ObjectID(),
+      name: faker.fake('{{company.companyName}}'),
+      category: faker.fake('{{commerce.productName}}'),
+      desc: faker.fake('{{company.bs}}'),
+      location: faker.fake('{{address.city}}, {{address.stateAbbr}}'),
+      expense: randomGen(),
+      food_rating: randomGen('rating'),
+      decor_rating: randomGen('rating'),
+      service_rating: randomGen('rating'),
+      desc_bold: faker.fake('{{lorem.sentences}}'),
+      knownfor_img: randomGen('image'),
+      knownfor_desc: faker.fake('{{random.words}}'),
+      mentions: randomGen('image')
+    });
 
 try {
-  Restaurant.insertMany(databaseData)
-} catch(e) {restaurants
-  console.log(e)
+  Restaurant.insertMany(databaseData);
+} catch (e) {
+ restaurants;
+  console.log(e);
 }
 // mongoose.connection.close();

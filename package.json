@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "version": "",
+  "name": "info_module",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "Mitchell Vandehaar",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
@@ -10,11 +10,18 @@
   "scripts": {
     "build": "node setup.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "webpack-cli": "^3.1.0"
+  },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "express": "^4.16.3",
     "faker": "^4.1.0",
-    "mongoose": "^5.2.13"
+    "mongoose": "^5.2.13",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.1"
   }
 }
