@@ -63,3 +63,4 @@ try {
   console.log(e);
 }
 // mongoose.connection.close();
+module.exports.databaseData = databaseData;

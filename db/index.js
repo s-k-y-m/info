@@ -1,3 +1,7 @@
+var mongoose = require('mongoose');
+mongoose.connect(
+  'mongodb://localhost/restaurants/info'
+);
 
 var save = (data) => {
   get((err, current) => {
