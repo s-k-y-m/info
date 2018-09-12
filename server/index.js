@@ -12,10 +12,9 @@ var port = process.env.port || 3001;
 app.use(express.static('../public'));
 app.get('/restaurants/info', function(req, res) {
   console.log("GET Request on /restaurants/");
-  res.status(200).send(db.databaseData)
+  res.status(200).send(db.databaseData[0]);
 });
-// res.send("hi")
-// });
+
 
 app.listen(port, function() {
   console.log(`Listening on ${port}`);

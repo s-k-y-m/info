@@ -28,7 +28,7 @@ var randomGen = function(flag) {
 
   if (flag === 'rating') {
     randNum += ((Math.random() * .99) + .01);
-    randNum = randNum.toFixed(2);
+    randNum = randNum.toFixed(1);
   }
   if (flag === 'image') {
     for (var i = 0; i < randNum; i++) {

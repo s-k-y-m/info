@@ -16,17 +16,26 @@ class App extends React.Component {
     $.ajax({
       url: '/restaurants/info',
       type: 'GET',
-      success: (items) => { console.log(items) },
-      error: (error) => { console.log(error) },
+      contentType: 'application/json',
+      success: (items) => { this.setRestaurant(items); },
+      error: (error) => { console.log(error); },
     });
+  }
+
+  setRestaurant(data) {
+    this.setState({
+      test: data
+    });
+    console.log(this.state);
   }
 
   render () {
     return (<div>
-      <h1>Test</h1>
       <Info test={this.state.test} />
     </div>);
   }
 } 
 
 ReactDOM.render(<App />, document.getElementById('app'));
+
+export default App;
