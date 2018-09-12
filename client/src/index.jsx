@@ -16,14 +16,21 @@ class App extends React.Component {
     $.ajax({
       url: '/restaurants/info',
       type: 'GET',
-      success: (items) => { console.log(items) },
+      contentType: 'application/json',
+      success: (items) => { this.setRestaurant(items) },
       error: (error) => { console.log(error) },
     });
   }
 
+  setRestaurant(data) {
+    this.setState({
+      test: data
+    });
+    console.log(this.state)
+  }
+
   render () {
     return (<div>
-      <h1>Test</h1>
       <Info test={this.state.test} />
     </div>);
   }
