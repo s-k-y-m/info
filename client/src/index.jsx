@@ -17,8 +17,8 @@ class App extends React.Component {
       url: '/restaurants/info',
       type: 'GET',
       contentType: 'application/json',
-      success: (items) => { this.setRestaurant(items) },
-      error: (error) => { console.log(error) },
+      success: (items) => { this.setRestaurant(items); },
+      error: (error) => { console.log(error); },
     });
   }
 
@@ -26,7 +26,7 @@ class App extends React.Component {
     this.setState({
       test: data
     });
-    console.log(this.state)
+    console.log(this.state);
   }
 
   render () {
@@ -37,3 +37,5 @@ class App extends React.Component {
 } 
 
 ReactDOM.render(<App />, document.getElementById('app'));
+
+export default App;
