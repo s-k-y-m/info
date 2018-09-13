@@ -3,12 +3,19 @@
   src: url('./fonts/CalibreWeb-Medium.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Calibre-Semibold';
+  src: url('./fonts/calibre-semibold-webfont.woff') format('woff');
+}
+
 body {
   width: 900px;
+  background-color: whitesmoke;
 }
 
 .box {
     padding: 0 40px 40px;
+    background-color: white;
 }
 
 .title-name {
@@ -51,9 +58,22 @@ body {
   display: inline-block;
   border-right: 1px #d0d2d3 solid;
   padding-bottom: 5px;
-  
-  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+
 }
+  
+@media (min-width: 960px) {
+.layout-row > .flex-gt-sm-66 
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 66.66%;
+    flex: 1 1 66.66%;
+    max-width: 66.66%;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
 .layout-row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -74,7 +94,6 @@ body {
   height: 60px;
   text-align: center;
   width: 300px;
-  padding: 5px;
   padding-bottom: 10px;
   border-bottom: 1px #d0d2d3 solid;
 }
@@ -104,4 +123,29 @@ body {
   font-size: 22px;
   letter-spacing: .004em;
   line-height: 32px;
+}
+
+.known-images {
+  display:  inline-block;
+  height: 72px;
+  margin: 8px 10px 0;
+  width: 100px
+  
+  
+}
+
+.known {
+  display: inline-block;
+  justify-content: flex-start;
+  width: 400px;
+}
+
+.known-keywords {
+  display: inline-block;
+  margin: 8px 10px 0;
+  width: 100px;
+  text-align: center;
+  color: #101820;
+  font: 15px/20px 'Calibre-Regular';
+  letter-spacing: .013em;
 }

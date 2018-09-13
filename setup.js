@@ -1,6 +1,11 @@
 var faker = require('faker');
 var mongoose = require('mongoose');
 var ObjectID = require('mongodb').ObjectID;
+var fs = require('fs');
+var dir = ['./assets/knownfor/breakfast.svg', './assets/knownfor/dinner.svg', './assets/knownfor/kids.svg',
+  './assets/knownfor/lively-scenes.svg', './assets/knownfor/lunch.svg', './assets/knownfor/online.svg', 
+  './assets/knownfor/outdoor-seating.svg', './assets/knownfor/people-watching.svg', './assets/knownfor/quick-bites.svg', 
+  './assets/knownfor/takeout.svg'];
 
 mongoose.connect('mongodb://localhost/restaurants');
 
@@ -32,7 +37,13 @@ var randomGen = function(flag) {
   }
   if (flag === 'image') {
     for (var i = 0; i < randNum; i++) {
-      arr.push(faker.fake('{{random.image}}'));
+      arr.push(dir[Math.floor(Math.random() * 9) + 1]);
+    }
+    randNum = arr;
+  }
+  if (flag === 'avatar') {
+    for (var i = 0; i < randNum; i++) {
+      arr.push(faker.fake('{{image.avatar}}'));
     }
     randNum = arr;
   }
@@ -53,14 +64,15 @@ var databaseData = new Array(100).fill(null)
       desc_bold: faker.fake('{{lorem.sentences}}'),
       knownfor_img: randomGen('image'),
       knownfor_desc: faker.fake('{{random.words}}'),
-      mentions: randomGen('image')
+      mentions: randomGen('avatar')
     });
 
 try {
   Restaurant.insertMany(databaseData);
 } catch (e) {
- restaurants;
+  restaurants;
   console.log(e);
 }
 // mongoose.connection.close();
 module.exports.databaseData = databaseData;
+
