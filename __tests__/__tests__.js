@@ -1,14 +1,15 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, {shallow} from 'enzyme';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import Adapter from 'enzyme-adapter-react-16';
-import App from '../client/src/index.jsx';
+import App from '../client/src';
 
-Enzyme.configure({ adapter: new Adapter() });
+// Enzyme.configure({ adapter: new Adapter() });
 
-describe('Test Suite for Info', () => {
-  const app = shallow(<App />);
+// describe('Test Suite for Info', () => {
+//   const app = shallow(<App />);
 
-  test('it should exist', () => {
-    expect(app.exists()).toBeTruthy();
-  });
-});
+//   test('it should exist', () => {
+//     expect(app.exists()).toBeTruthy();
+//   });
+// });

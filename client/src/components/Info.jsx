@@ -8,7 +8,7 @@ var Info = (props) => (
       <a href="Something" alt className="zgt-place-sheet-basic-details">{props.test.location}</a> <a href="Something" alt className="zgt-place-sheet-basic-details">$$</a>
     
       <div className="divider"> 
-        <img src="./assets/z-logo-icon-red.svg" alt className="test"></img>
+        <img src="./assets/z-logo-icon-red.svg" className="test"></img>
       </div>
       <div className="section-heading">THE ZAGAT REVIEW</div>
       <div className="zgt-place-sheet-zagat-rating">
