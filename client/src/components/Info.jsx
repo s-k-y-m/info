@@ -5,24 +5,24 @@ var Info = (props) => (
     <div className="box">
       <div className="title-name">{props.test.name}</div>
       <div className="desc">{props.test.desc}</div>
-      <a href="Something" alt className="zgt-place-sheet-basic-details">{props.test.location}</a> <a href="Something" alt className="zgt-place-sheet-basic-details">$$</a>
+      <a href="Something" alt className="basic-details">{props.test.location}</a> <a href="Something" alt className="basic-details">{props.test.expense}</a>
     
       <div className="divider"> 
         <img src="./assets/z-logo-icon-red.svg" className="test"></img>
       </div>
       <div className="section-heading">THE ZAGAT REVIEW</div>
-      <div className="zgt-place-sheet-zagat-rating">
+      <div className="place-rating">
         
         <div className="cell">
-          <div className="zgt-place-sheet-zagat-rating-value">{props.test.food_rating}</div>
+          <div className="ratings">{props.test.food_rating}</div>
           <div className="label-score">Food</div>
         </div>
         <div className="cell">
-          <div className="zgt-place-sheet-zagat-rating-value">{props.test.decor_rating}</div>
+          <div className="ratings">{props.test.decor_rating}</div>
           <div className="label-score">Decor</div>
         </div>
         <div className="cell">
-          <div className="zgt-place-sheet-zagat-rating-value">{props.test.service_rating}</div>
+          <div className="ratings">{props.test.service_rating}</div>
           <div className="label-score">Service</div>
         </div>
       </div><br></br>
