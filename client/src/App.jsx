@@ -13,18 +13,39 @@ class App extends React.Component {
         knownfor_desc: [],
       },
       button: true,
-      hideButton: true
+      hideButton: true,
+      id: '5ba00b616ef0b4457c2886aa'
     };
     this.toggleButton = this.toggleButton.bind(this);
   }
 
+  componentWillMount() {
+    this.getRestaurants();
+  }
+
   componentDidMount() {
     $.ajax({
-      url: '/restaurants/info',
+      url: `/restaurants/info/${this.state.id}`,
       type: 'GET',
       contentType: 'application/json',
       success: (items) => { this.setRestaurant(items); },
       error: (error) => { console.log(error); },
+    });
+  }
+
+  getRestaurants() {
+    $.ajax({
+      url: '/restaurants/all',
+      type: 'GET',
+      contentType: 'application/json',
+      success: (items) => { 
+        var randNum = Math.floor(Math.random() * items.length) + 1;
+        this.setState({
+          id: items[randNum].id
+        });
+        console.log(this.state)
+      },
+      error: (error) => { console.log(error); }
     });
   }
 
@@ -56,9 +77,9 @@ class App extends React.Component {
     if (flag === false) {
       if (this.state.test.mentions.length > 2) {
         for (var i = 2; i < this.state.test.mentions.length; i++) {
-          var test2 = document.getElementsByClassName('known-desc');
-          if (test2[i]) {
-            test2[i].style.display = 'none';
+          var mentionBox = document.getElementsByClassName('known-desc');
+          if (mentionBox[i]) {
+            mentionBox[i].style.display = 'none';
           }
           this.setState({
             hideButton: false
@@ -68,9 +89,9 @@ class App extends React.Component {
     } else {
       if (this.state.test.mentions.length > 2) {
         for (var i = 2; i < this.state.test.mentions.length; i++) {
-          var test2 = document.getElementsByClassName('known-desc');
-          if (test2[i]) {
-            test2[i].style.display = 'inline-block';
+          var mentionBox = document.getElementsByClassName('known-desc');
+          if (mentionBox[i]) {
+            mentionBox[i].style.display = 'inline-block';
           }
           this.setState({
             hideButton: false
@@ -81,7 +102,6 @@ class App extends React.Component {
   }
 
   render () {
-
     if (this.state.button === false) {
       return (<div>
         <Info test={this.state.test} />

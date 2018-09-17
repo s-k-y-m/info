@@ -86,6 +86,16 @@ try {
   restaurants;
   console.log(e);
 }
-// mongoose.connection.close();
+
+var findOne = (param, callback) => {
+  return Restaurant.findOne({ id: param }, callback);
+};
+
+var getAll = (callback) => {
+  return Restaurant.find({}, callback);
+};
+
 module.exports.databaseData = databaseData;
+module.exports.findOne = findOne;
+module.exports.getAll = getAll;
 

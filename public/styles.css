@@ -33,11 +33,12 @@ body {
   padding: 2px 0 0;
 }
 
-.zgt-place-sheet-basic-details {
+.basic-details {
   color: #656666;
   border-bottom: 1px #656666 solid;
   color: #656666;
   text-decoration: none;
+  font: 15px/24px 'Calibre-Regular';
 }
 
 
@@ -90,7 +91,7 @@ body {
   text-transform: uppercase;
 }
 
-.zgt-place-sheet-zagat-rating {
+.place-rating {
   display: flex;
   height: 60px;
   text-align: center;
@@ -99,7 +100,7 @@ body {
   border-bottom: 1px #d0d2d3 solid;
 }
 
-.zgt-place-sheet-zagat-rating-value {
+.ratings {
   display: inline-block;
   padding-bottom: 2px;
   padding-right: 30px;
@@ -157,11 +158,14 @@ body {
 .known-cell {
     max-width: 120px;
     min-width: 120px;
+    display: inline-block;
+    overflow: hidden;
+    background-color: black;
 }
 
 .known-cell:hover {
-  transform: translateZ(0);
-
+  transform: scale(1.01);
+  opacity: 0.8;
 }
 
 .known-desc {
@@ -205,6 +209,7 @@ body {
   font: 16px/24px 'Calibre-Medium';
   letter-spacing: .086em;
   background: white;
+  padding-bottom: 20px;
 }
 
 .known-button {
@@ -217,4 +222,9 @@ border: 2px solid #b70038;
 height: 30px;
 width: 20%;
 text-align: center;
+}
+
+.known-button:hover {
+background: #b70038;
+color: white;
 }
