@@ -22,6 +22,7 @@ body {
   font: 36px/44px 'Calibre-Medium';
   letter-spacing: .086em;
   text-transform: uppercase;
+  padding-top: 20px;
 }
 
 .desc {
@@ -93,7 +94,7 @@ body {
   display: flex;
   height: 60px;
   text-align: center;
-  width: 300px;
+  width: 400px;
   padding-bottom: 10px;
   border-bottom: 1px #d0d2d3 solid;
 }
@@ -101,6 +102,9 @@ body {
 .zgt-place-sheet-zagat-rating-value {
   display: inline-block;
   padding-bottom: 2px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
   font: 36px/44px 'Calibre-Medium';
   letter-spacing: .086em;
   text-transform: uppercase;
@@ -128,7 +132,7 @@ body {
 .known-images {
   display:  inline-block;
   height: 72px;
-  margin: 8px 10px 0;
+  margin: 5px 10px 5px;
   width: 100px
   
   
@@ -137,15 +141,80 @@ body {
 .known {
   display: inline-block;
   justify-content: flex-start;
-  width: 400px;
+  width: 750px;
 }
 
 .known-keywords {
   display: inline-block;
-  margin: 8px 10px 0;
-  width: 100px;
+  padding-left: 10px;
+  width: 110px;
   text-align: center;
   color: #101820;
   font: 15px/20px 'Calibre-Regular';
   letter-spacing: .013em;
+}
+
+.known-cell {
+    max-width: 120px;
+    min-width: 120px;
+}
+
+.known-cell:hover {
+  transform: translateZ(0);
+
+}
+
+.known-desc {
+  display: inline-block;
+  width: 350px;
+
+
+
+}
+
+.known-words {
+  display: inline-flex;
+  align-items: center;
+  color: #101820;
+  font: 19px/23px 'Calibre-Medium';
+  letter-spacing: .013em;
+  align-items: center;
+  height: 76px;
+  max-width: 216px;
+  padding: 22px 14px;
+  position: absolute;
+}
+.mentions-box:hover {
+  cursor: -webkit-grabbing;
+  text-decoration: underline red;
+}
+
+.known-words:hover {
+  text-decoration: underline red;
+}
+@media (min-width: 960px)
+.known-desc {
+    background-repeat: no-repeat;
+    transition: transform .3s cubic-bezier(0.645,0.045,0.355,1.000),background-size .3s cubic-bezier(0.645,0.045,0.355,1.000),background-position .3s cubic-bezier(0.645,0.045,0.355,1.000);
+    background-size: cover;
+}
+
+.button-box {
+  color: #b70038;
+  cursor: pointer;
+  font: 16px/24px 'Calibre-Medium';
+  letter-spacing: .086em;
+  background: white;
+}
+
+.known-button {
+display: inline-block; 
+margin-left: 340px;
+padding-top: 3px;
+text-transform: uppercase;
+background: none;
+border: 2px solid #b70038;
+height: 30px;
+width: 20%;
+text-align: center;
 }
