@@ -33,7 +33,6 @@ class App extends React.Component {
       test: data
     });
     this.toggleButton();
-    this.showButton(this.state.button)
   }
 
   toggleButton() {
@@ -50,27 +49,25 @@ class App extends React.Component {
         button: false
       });
     }
-    
     this.showButton(buttonState);
   }
 
   showButton(flag) {
     if (flag === false) {
-      if (this.state.test.knownfor_img.length > 2) {
-        for (var i = 2; i < this.state.test.knownfor_img.length; i++) {
+      if (this.state.test.mentions.length > 2) {
+        for (var i = 2; i < this.state.test.mentions.length; i++) {
           var test2 = document.getElementsByClassName('known-desc');
           if (test2[i]) {
             test2[i].style.display = 'none';
           }
-          
           this.setState({
             hideButton: false
           });
         }
-      } 
+      }
     } else {
-      if (this.state.test.knownfor_img.length > 2) {
-        for (var i = 2; i < this.state.test.knownfor_img.length; i++) {
+      if (this.state.test.mentions.length > 2) {
+        for (var i = 2; i < this.state.test.mentions.length; i++) {
           var test2 = document.getElementsByClassName('known-desc');
           if (test2[i]) {
             test2[i].style.display = 'inline-block';
@@ -84,6 +81,7 @@ class App extends React.Component {
   }
 
   render () {
+
     if (this.state.button === false) {
       return (<div>
         <Info test={this.state.test} />

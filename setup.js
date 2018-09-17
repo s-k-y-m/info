@@ -15,7 +15,7 @@ var restSchema = mongoose.Schema({
   category: String,
   desc: String,
   location: String,
-  expense: Number,
+  expense: String,
   food_rating: Number,
   decor_rating: Number,
   service_rating: Number,
@@ -53,6 +53,13 @@ var randomGen = function(flag) {
     }
     randNum = arr;
   }
+  if (flag === 'dollars') {
+    var dollar = '';
+    for (var i = 0; i < randNum; i++) {
+      dollar += '$';
+    }
+    randNum = dollar;
+  }
   return randNum;
 };
 
@@ -63,7 +70,7 @@ var databaseData = new Array(100).fill(null)
       category: faker.fake('{{commerce.productName}}'),
       desc: faker.fake('{{company.bs}}'),
       location: faker.fake('{{address.city}}'),
-      expense: randomGen(),
+      expense: randomGen('dollars'),
       food_rating: randomGen('rating'),
       decor_rating: randomGen('rating'),
       service_rating: randomGen('rating'),

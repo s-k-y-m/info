@@ -5,7 +5,7 @@ var Info = (props) => (
     <div className="box">
       <div className="title-name">{props.test.name}</div>
       <div className="desc">{props.test.desc}</div>
-      <a href="Something" alt className="zgt-place-sheet-basic-details">{props.test.location}</a> <a href="Something" alt className="zgt-place-sheet-basic-details">$$</a>
+      <a href="Something" alt className="zgt-place-sheet-basic-details">{props.test.location}</a> <a href="Something" alt className="zgt-place-sheet-basic-details">{props.test.expense}</a>
     
       <div className="divider"> 
         <img src="./assets/z-logo-icon-red.svg" className="test"></img>
