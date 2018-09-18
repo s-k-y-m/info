@@ -1,28 +1,29 @@
 import React from 'react';
+import styles from '../../../public/styles.css';
 
 var KnownFor = (props) => (
   <div>
-    <div className="box">
+    <div className={styles.box}>
       <br></br><br></br>
-      <div className="section-heading">KNOWN FOR</div>
-      <div className="known">
+      <div className={styles.sectionHeading}>KNOWN FOR</div>
+      <div className={styles.known}>
         {props.data.knownfor_img.map((element, index) => {
-          return <div className="known-keywords"> 
-            <img src={element} key={index.element} className="known-images"></img>
-            <div className="known-keywords" key={index}>{element.slice(18, -4).charAt(0).toUpperCase() +
+          return <div className={styles.knownKeywords}> 
+            <img src={element} key={index.element} className={styles.knownImages}></img>
+            <div className={styles.knownKeywords} key={index}>{element.slice(18, -4).charAt(0).toUpperCase() +
               element.slice(19, -4).replace('-', ' ')}</div>
           </div>
           ;
         } )}
       </div>
       <br></br><br></br><br></br>
-      <div className="section-heading">ZAGAT MENTIONS OF {props.data.name}</div>
+      <div className={styles.sectionHeading}>ZAGAT MENTIONS OF {props.data.name}</div>
       <br></br>
-      <div className="mentions-box">
+      <div className={styles.mentionsBox}>
         {props.data.mentions.map((element, index) => {
-          return <div className="known-desc" key={index.element}>
-            <img src={element} className="known-cell" key={index.element}></img>
-            <div className="known-words" key={index}>{props.data.knownfor_desc[index]}</div>
+          return <div className={styles.knownDesc} key={index.element}>
+            <img src={element} className={styles.knownCell} key={index.element}></img>
+            <div className={styles.knownWords} key={index}>{props.data.knownfor_desc[index]}</div>
             <br></br><br></br>
           </div>
           ;

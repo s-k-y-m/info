@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import Info from './components/Info.jsx';
 import KnownFor from './components/KnownFor.jsx';
+import styles from '../../public/styles.css';
 
 
 class App extends React.Component {
@@ -14,14 +15,14 @@ class App extends React.Component {
       },
       button: true,
       hideButton: true,
-      id: '5ba00b616ef0b4457c2886aa'
+      id: '5ba17264386acc446e0f3590'
     };
     this.toggleButton = this.toggleButton.bind(this);
   }
 
-  componentWillMount() {
-    this.getRestaurants();
-  }
+  // componentWillMount() {
+  //   this.getRestaurants();
+  // }
 
   componentDidMount() {
     $.ajax({
@@ -107,8 +108,8 @@ class App extends React.Component {
         <Info test={this.state.test} />
         <br></br><br></br><br></br>
         <KnownFor data={this.state.test} />
-        <div className="button-box" hidden={this.state.hideButton}>
-          <div className="known-button" button type="button" onClick={this.toggleButton}>SHOW ALL ({this.state.test.mentions.length})</div>
+        <div className={styles.buttonBox} hidden={this.state.hideButton}>
+          <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW ALL ({this.state.test.mentions.length})</div>
         </div>
       </div>);
     } else {
@@ -116,8 +117,8 @@ class App extends React.Component {
         <Info test={this.state.test} />
         <br></br><br></br><br></br>
         <KnownFor data={this.state.test} />
-        <div className="button-box" hidden={this.state.hideButton}>
-          <div className="known-button" button type="button" onClick={this.toggleButton}>SHOW LESS</div>
+        <div className={styles.buttonBox} hidden={this.state.hideButton}>
+          <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW LESS</div>
         </div>
       </div>);
     }
