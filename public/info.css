@@ -8,7 +8,7 @@
   src: url('./fonts/calibre-semibold-webfont.woff') format('woff');
 }
 
-body {
+.infoBody {
   width: 900px;
   background-color: whitesmoke;
 }
