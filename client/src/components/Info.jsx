@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../public/styles.css';
+import styles from '../../../public/info.css';
 
 var Info = (props) => (
   <div>
