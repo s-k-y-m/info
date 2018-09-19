@@ -2,7 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import Info from './components/Info.jsx';
 import KnownFor from './components/KnownFor.jsx';
-import styles from '../../public/styles.css';
+import styles from '../../public/info.css';
 
 
 class App extends React.Component {

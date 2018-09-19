@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../public/styles.css';
+import styles from '../../../public/info.css';
 
 var KnownFor = (props) => (
   <div>
@@ -10,7 +10,7 @@ var KnownFor = (props) => (
         {props.data.knownfor_img.map((element, index) => {
           return <div className={styles.knownKeywords}> 
             <img src={element} key={index.element} className={styles.knownImages}></img>
-            <div className={styles.knownKeywords} key={index}>{element.slice(18, -4).charAt(0).toUpperCase() +
+            <div className={styles.knownKeywords} key={element.index}>{element.slice(18, -4).charAt(0).toUpperCase() +
               element.slice(19, -4).replace('-', ' ')}</div>
           </div>
           ;
@@ -23,7 +23,7 @@ var KnownFor = (props) => (
         {props.data.mentions.map((element, index) => {
           return <div className={styles.knownDesc} key={index.element}>
             <img src={element} className={styles.knownCell} key={index.element}></img>
-            <div className={styles.knownWords} key={index}>{props.data.knownfor_desc[index]}</div>
+            <div className={styles.knownWords} key={element.index}>{props.data.knownfor_desc[index]}</div>
             <br></br><br></br>
           </div>
           ;
