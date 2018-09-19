@@ -102,7 +102,7 @@ class App extends React.Component {
       </div>);
     } else {
       if (this.state.id && this.state.button === false) {
-        return (<div className="infoBody">
+        return (<div className={styles.infoBody}>
           <Info test={this.state.test} />
           <br></br><br></br><br></br>
           <KnownFor data={this.state.test} />
