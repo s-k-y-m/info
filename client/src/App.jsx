@@ -30,7 +30,7 @@ class App extends React.Component {
       type: 'GET',
       contentType: 'application/json',
       success: (items) => { 
-        var randNum = Math.floor(Math.random() * items.length) + 1;
+        var randNum = Math.floor(Math.random() * items.length);
         this.setState({
           id: items[randNum].id
         });
