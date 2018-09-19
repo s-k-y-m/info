@@ -1,35 +1,35 @@
 @font-face {
-  font-family: 'Calibre-Medium';
-  src: url('./fonts/CalibreWeb-Medium.woff') format('woff');
+  font-family: "Calibre-Medium";
+  src: url("./fonts/CalibreWeb-Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Calibre-Semibold';
-  src: url('./fonts/calibre-semibold-webfont.woff') format('woff');
+  font-family: "Calibre-Semibold";
+  src: url("./fonts/calibre-semibold-webfont.woff") format("woff");
 }
 
 .infoBody {
   margin-top: 72px;
-  width: 900px;
+  width: 100%;
   background-color: whitesmoke;
 }
 
 .box {
-    padding: 0 40px 40px;
-    background-color: white;
+  padding: 0 40px 40px;
+  background-color: white;
 }
 
 .titleName {
-  font: 36px/44px 'Calibre-Medium';
-  letter-spacing: .086em;
+  font: 36px/44px "Calibre-Medium";
+  letter-spacing: 0.086em;
   text-transform: uppercase;
   padding-top: 20px;
 }
 
 .desc {
   color: #656666;
-  font: 15px/24px 'Calibre-Regular';
-  letter-spacing: .013em;
+  font: 15px/24px "Calibre-Regular";
+  letter-spacing: 0.013em;
   margin: 0;
   padding: 2px 0 0;
 }
@@ -39,9 +39,8 @@
   border-bottom: 1px #656666 solid;
   color: #656666;
   text-decoration: none;
-  font: 15px/24px 'Calibre-Regular';
+  font: 15px/24px "Calibre-Regular";
 }
-
 
 .divider {
   border-bottom: 1px #656666 solid;
@@ -54,7 +53,7 @@
   border-radius: 16px;
   height: 32px;
   margin-top: -16px;
-  margin-left: 83.3%
+  margin-left: 83.3%;
 }
 
 .cell {
@@ -63,18 +62,16 @@
   padding-bottom: 5px;
   padding-right: 10px;
   padding-left: 10px;
-
-
 }
-  
+
 @media (min-width: 960px) {
-.layoutRow > .flex-gt-sm-66 
+  .layoutrow> .flex-gt-sm-66 
     -webkit-box-flex: 1;
-    -webkit-flex: 1 1 66.66%;
-    flex: 1 1 66.66%;
-    max-width: 66.66%;
-    max-height: 100%;
-    box-sizing: border-box;
+  -webkit-flex: 1 1 66.66%;
+  flex: 1 1 66.66%;
+  max-width: 66.66%;
+  max-height: 100%;
+  box-sizing: border-box;
 }
 
 .layoutRow {
@@ -87,8 +84,8 @@
 
 .sectionHeading {
   color: #656666;
-  font: 16px/24px 'Calibre-Semibold';
-  letter-spacing: .086em;
+  font: 16px/24px "Calibre-Semibold";
+  letter-spacing: 0.086em;
   text-transform: uppercase;
 }
 
@@ -107,37 +104,35 @@
   padding-right: 30px;
   padding-left: 30px;
   text-align: center;
-  font: 36px/44px 'Calibre-Medium';
-  letter-spacing: .086em;
+  font: 36px/44px "Calibre-Medium";
+  letter-spacing: 0.086em;
   text-transform: uppercase;
 }
 
 .labelScore {
   display: inline-block;
   font-size: 13px;
-  letter-spacing: .061em;
+  letter-spacing: 0.061em;
   line-height: 18px;
   text-transform: uppercase;
 }
 
 .zgtRightSeparator {
   border-right: 1px #d0d2d3 solid;
-  display: flex
+  display: flex;
 }
 
 .bodyLarge {
   font-size: 22px;
-  letter-spacing: .004em;
+  letter-spacing: 0.004em;
   line-height: 32px;
 }
 
 .knownImages {
-  display:  inline-block;
+  display: inline-block;
   height: 72px;
   margin: 5px 10px 5px;
-  width: 100px
-  
-  
+  width: 100px;
 }
 
 .known {
@@ -152,16 +147,16 @@
   width: 110px;
   text-align: center;
   color: #101820;
-  font: 15px/20px 'Calibre-Regular';
-  letter-spacing: .013em;
+  font: 15px/20px "Calibre-Regular";
+  letter-spacing: 0.013em;
 }
 
 .knownCell {
-    max-width: 120px;
-    min-width: 120px;
-    display: inline-block;
-    overflow: hidden;
-    background-color: black;
+  max-width: 120px;
+  min-width: 120px;
+  display: inline-block;
+  overflow: hidden;
+  background-color: black;
 }
 
 .knownCell:hover {
@@ -172,17 +167,14 @@
 .knownDesc {
   display: inline-block;
   width: 350px;
-
-
-
 }
 
 .knownWords {
   display: inline-flex;
   align-items: center;
   color: #101820;
-  font: 19px/23px 'Calibre-Medium';
-  letter-spacing: .013em;
+  font: 19px/23px "Calibre-Medium";
+  letter-spacing: 0.013em;
   align-items: center;
   height: 76px;
   max-width: 216px;
@@ -197,35 +189,36 @@
 .knownWords:hover {
   text-decoration: underline red;
 }
-@media (min-width: 960px)
-.known-desc {
-    background-repeat: no-repeat;
-    transition: transform .3s cubic-bezier(0.645,0.045,0.355,1.000),background-size .3s cubic-bezier(0.645,0.045,0.355,1.000),background-position .3s cubic-bezier(0.645,0.045,0.355,1.000);
-    background-size: cover;
+@media (min-width: 960px) .known-desc {
+  background-repeat: no-repeat;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-size 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background-position 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-size: cover;
 }
 
 .buttonBox {
   color: #b70038;
   cursor: pointer;
-  font: 16px/24px 'Calibre-Medium';
-  letter-spacing: .086em;
+  font: 16px/24px "Calibre-Medium";
+  letter-spacing: 0.086em;
   background: white;
   padding-bottom: 20px;
 }
 
 .knownButton {
-display: inline-block; 
-margin-left: 340px;
-padding-top: 3px;
-text-transform: uppercase;
-background: none;
-border: 2px solid #b70038;
-height: 30px;
-width: 20%;
-text-align: center;
+  display: inline-block;
+  margin-left: 340px;
+  padding-top: 3px;
+  text-transform: uppercase;
+  background: none;
+  border: 2px solid #b70038;
+  height: 30px;
+  width: 20%;
+  text-align: center;
 }
 
 .knownButton:hover {
-background: #b70038;
-color: white;
+  background: #b70038;
+  color: white;
 }
