@@ -32,7 +32,7 @@ var randomGen = function(flag) {
   var arr = [];
 
   if (flag === 'rating') {
-    randNum += ((Math.random() * .99) + .01);
+    randNum += ((Math.random() * .98) + .01);
     randNum = randNum.toFixed(1);
   }
   if (flag === 'image') {
