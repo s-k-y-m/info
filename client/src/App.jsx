@@ -15,25 +15,15 @@ class App extends React.Component {
       },
       button: true,
       hideButton: true,
-      id: '5ba17264386acc446e0f3590'
+      id: null,
     };
     this.toggleButton = this.toggleButton.bind(this);
   }
 
-  // componentWillMount() {
-  //   this.getRestaurants();
-  // }
-
   componentDidMount() {
-    $.ajax({
-      url: `/restaurants/info/${this.state.id}`,
-      type: 'GET',
-      contentType: 'application/json',
-      success: (items) => { this.setRestaurant(items); },
-      error: (error) => { console.log(error); },
-    });
+    this.getRestaurants();
   }
-
+  
   getRestaurants() {
     $.ajax({
       url: '/restaurants/all',
@@ -44,17 +34,21 @@ class App extends React.Component {
         this.setState({
           id: items[randNum].id
         });
-        console.log(this.state)
+        $.ajax({
+          url: `/restaurants/info/${this.state.id}`,
+          type: 'GET',
+          contentType: 'application/json',
+          success: (items) => {
+            this.setState({
+              test: items
+            });
+            this.toggleButton();
+          },    
+          error: (error) => { console.log(error); },
+        });
       },
       error: (error) => { console.log(error); }
     });
-  }
-
-  setRestaurant(data) {
-    this.setState({
-      test: data
-    });
-    this.toggleButton();
   }
 
   toggleButton() {
@@ -75,10 +69,10 @@ class App extends React.Component {
   }
 
   showButton(flag) {
-    if (flag === false) {
+    if (this.state.id && flag === false) {
       if (this.state.test.mentions.length > 2) {
         for (var i = 2; i < this.state.test.mentions.length; i++) {
-          var mentionBox = document.getElementsByClassName('known-desc');
+          var mentionBox = document.getElementsByClassName(styles.knownDesc);
           if (mentionBox[i]) {
             mentionBox[i].style.display = 'none';
           }
@@ -87,10 +81,10 @@ class App extends React.Component {
           });
         }
       }
-    } else {
+    } else if (this.state.id && flag === true) {
       if (this.state.test.mentions.length > 2) {
         for (var i = 2; i < this.state.test.mentions.length; i++) {
-          var mentionBox = document.getElementsByClassName('known-desc');
+          var mentionBox = document.getElementsByClassName(styles.knownDesc);
           if (mentionBox[i]) {
             mentionBox[i].style.display = 'inline-block';
           }
@@ -103,26 +97,32 @@ class App extends React.Component {
   }
 
   render () {
-    if (this.state.button === false) {
+    if (!this.state.id) {
       return (<div>
-        <Info test={this.state.test} />
-        <br></br><br></br><br></br>
-        <KnownFor data={this.state.test} />
-        <div className={styles.buttonBox} hidden={this.state.hideButton}>
-          <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW ALL ({this.state.test.mentions.length})</div>
-        </div>
+        <p>Loading...</p>
       </div>);
     } else {
-      return (<div>
-        <Info test={this.state.test} />
-        <br></br><br></br><br></br>
-        <KnownFor data={this.state.test} />
-        <div className={styles.buttonBox} hidden={this.state.hideButton}>
-          <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW LESS</div>
-        </div>
-      </div>);
+      if (this.state.id && this.state.button === false) {
+        return (<div>
+          <Info test={this.state.test} />
+          <br></br><br></br><br></br>
+          <KnownFor data={this.state.test} />
+          <div className={styles.buttonBox} hidden={this.state.hideButton}>
+            <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW ALL ({this.state.test.mentions.length})</div>
+          </div>
+        </div>);
+      } else if (this.state.button === true) {
+        return (<div>
+          <Info test={this.state.test} />
+          <br></br><br></br><br></br>
+          <KnownFor data={this.state.test} />
+          <div className={styles.buttonBox} hidden={this.state.hideButton}>
+            <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW LESS</div>
+          </div>
+        </div>);
+      } 
     }
   }
-}
 
+}
 export default App;
