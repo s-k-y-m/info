@@ -9,11 +9,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      test: { "_id":"5ba1b12b0129ac786856e5de", "knownfor_img":[ "./assets/knownfor/takeout.svg", "./assets/knownfor/dinner.svg", "./assets/knownfor/dinner.svg", "./assets/knownfor/kids.svg" ], "knownfor_desc":[ "ipsam numquam velit", "quia ea doloremque", "et eaque est", "reprehenderit vel ipsam", "ut nostrum animi" ], "mentions":[ "https://s3.amazonaws.com/uifaces/faces/twitter/jjshaw14/128.jpg", "https://s3.amazonaws.com/uifaces/faces/twitter/superoutman/128.jpg", "https://s3.amazonaws.com/uifaces/faces/twitter/wintopia/128.jpg" ], "id":"5ba1b12b0129ac786856e57a", "name":"Rau, O'Conner and Franecki", "category":"Unbranded Frozen Pants", "desc":"dynamic whiteboard systems", "location":"North Romanstad", "expense":"$$", "food_rating":3.9, "decor_rating":5.4, "service_rating":3.1, "desc_bold":"Et quia rerum. Saepe neque optio quo maiores.", "__v":0 },
-      
+      test: { "_id":"5ba1b12b0129ac786856e5de", "knownfor_img":[ "./assets/knownfor/takeout.svg", "./assets/knownfor/dinner.svg", "./assets/knownfor/dinner.svg", "./assets/knownfor/kids.svg" ], "knownfor_desc":[ "ipsam numquam velit", "quia ea doloremque", "et eaque est", "reprehenderit vel ipsam", "ut nostrum animi" ], "mentions":[ "https://s3.amazonaws.com/uifaces/faces/twitter/jjshaw14/128.jpg", "https://s3.amazonaws.com/uifaces/faces/twitter/superoutman/128.jpg", "https://s3.amazonaws.com/uifaces/faces/twitter/wintopia/128.jpg" ], "id":"5ba1b12b0129ac786856e57a", "name":"Rau, O'Conner and Franecki", "category":"Unbranded Frozen Pants", "desc":"dynamic whiteboard systems", "location":"North Romanstad", "expense":"$$", "food_rating":3.9, "decor_rating":5.4, "service_rating":3.1, "desc_bold":"Et quia rerum. Saepe neque optio quo maiores.", "__v":0 },  
       button: true,
       hideButton: true,
-      id: null,
+      id: '5ba1b12b0129ac786856e5de',
     };
     this.toggleButton = this.toggleButton.bind(this);
   }
