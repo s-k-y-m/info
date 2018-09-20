@@ -3,8 +3,8 @@ import styles from '../../../public/info.css';
 
 var KnownFor = (props) => (
   <div>
-    <div className={styles.box}>
-      <br></br><br></br>
+    <div className={styles.box2}>
+      
       <div className={styles.sectionHeading}>KNOWN FOR</div>
       <div className={styles.known}>
         {props.data.knownfor_img.map((element, index) => {

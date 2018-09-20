@@ -13,14 +13,13 @@ class App extends React.Component {
       
       button: true,
       hideButton: true,
-      id: '5ba1b12b0129ac786856e5de',
+      id: null,
     };
     this.toggleButton = this.toggleButton.bind(this);
   }
 
   componentDidMount() {
-    // this.getRestaurants();
-    this.toggleButton()
+    this.getRestaurants();
   }
   
   getRestaurants() {
@@ -104,7 +103,7 @@ class App extends React.Component {
       if (this.state.id && this.state.button === false) {
         return (<div className={styles.infoBody}>
           <Info test={this.state.test} />
-          <br></br><br></br><br></br>
+          
           <KnownFor data={this.state.test} />
           <div className={styles.buttonBox} hidden={this.state.hideButton}>
             <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW ALL ({this.state.test.mentions.length})</div>
@@ -113,7 +112,7 @@ class App extends React.Component {
       } else if (this.state.button === true) {
         return (<div className="infoBody">
           <Info test={this.state.test} />
-          <br></br><br></br><br></br>
+          
           <KnownFor data={this.state.test} />
           <div className={styles.buttonBox} hidden={this.state.hideButton}>
             <div className={styles.knownButton} button type="button" onClick={this.toggleButton}>SHOW LESS</div>
