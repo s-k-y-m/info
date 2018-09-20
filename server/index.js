@@ -25,41 +25,41 @@ app.get('/restaurants/info/*', function(req, res) {
   console.log("GET Request on " + req.url);
   var dbId = req.url.slice(18);
   // console.log(dbId)
-  // var sendMe = function(id) {
-  //   for (var i = 0; i < tempHardCode.length; i++) {
-  //     if (tempHardCode[i]['id'] === id) {
-  //       console.log(id)
-  //       return tempHardCode[i]
-  //     }
-  //   }
-  // }
-  // res.status(201).send(sendMe(dbId))
-  // res.end();
-  db.findOne(dbId, (err, data) => {
-    if (err) {
-      res.status(405).send("error");
-      res.end();
-    } else {
-      res.status(200).send(data);
-      res.end();
+  var sendMe = function(id) {
+    for (var i = 0; i < tempHardCode.length; i++) {
+      if (tempHardCode[i]['id'] === id) {
+        console.log(id)
+        return tempHardCode[i]
+      }
     }
-  });
+  }
+  res.status(201).send(sendMe(dbId))
+  res.end();
+  // db.findOne(dbId, (err, data) => {
+  //   if (err) {
+  //     res.status(405).send("error");
+  //     res.end();
+  //   } else {
+  //     res.status(200).send(data);
+  //     res.end();
+  //   }
+  // });
 });
 
 app.get('/restaurants/all', function(req, res) {
   console.log("GET Request on " + req.url);
-  db.getAll((err, data) => {
-    if (err) {
-      res.status(404).send("error");
-      res.end();
-    } else {
-      res.status(200).send(data);
-      res.end();
-    }
-  // res.status(201).send(tempHardCode)
-  // res.end();
+  // db.getAll((err, data) => {
+  //   if (err) {
+  //     res.status(404).send("error");
+  //     res.end();
+  //   } else {
+  //     res.status(200).send(data);
+  //     res.end();
+  //   }
+  res.status(201).send(tempHardCode)
+  res.end();
   });
-});
+// });
 
 
 app.listen(port, function() {

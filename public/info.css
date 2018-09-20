@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Calibre-Medium";
-  src: url("./fonts/CalibreWeb-Medium.woff") format("woff");
+  font-family: "Calibre-Medium2";
+  src: url("./fonts/CalibreWeb-Medium2.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Calibre-Semibold";
-  src: url("./fonts/calibre-semibold-webfont.woff") format("woff");
+  font-family: "Calibre-Semibold2";
+  src: url("./fonts/calibre-semibold-webfont2.woff") format("woff");
 }
 
 .infoBody {
@@ -91,7 +91,7 @@
 
 .placeRating {
   display: flex;
-  height: 60px;
+  height: 75px;
   text-align: center;
   width: 400px;
   padding-bottom: 10px;
